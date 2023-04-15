@@ -74,8 +74,8 @@ int checks_error(char *str)
 
 void	ft_sort_all_args(size_t size, t_data *stack)
 {
+
 	size = hubsize(stack->a);
-	
 	if (stack->a == NULL)
 		return ;
 	if (size == 2)
@@ -86,8 +86,8 @@ void	ft_sort_all_args(size_t size, t_data *stack)
 		ft_sort_4_args(stack);
 	if (size == 5)
 		ft_sort_5_args(stack);
-	if (size > 5 && size < 200)
-	{
+	// if (size > 5 && size < 200)
+	// {
 		
-	}
+	// }
 }

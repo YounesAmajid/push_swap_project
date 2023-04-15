@@ -29,11 +29,10 @@ int main (int argc, char **argv)
 {
     t_hub *tmp;
     t_hub *tmp2;
-	t_hub  *stack;
+	t_hub *stack;
     int i;
     int nbr;
 
-    stack = NULL;
     stack = NULL;
 
     if (argc <= 2)
@@ -44,32 +43,33 @@ int main (int argc, char **argv)
         if (checks_error(argv[i]) == 0)
             return (1);
         nbr = ft_atoi(argv[i]);
-        ft_lstaddback(&stack, ft_lstnew(nbr, 0));
+        ft_lstaddback(&stack->a, ft_lstnew(nbr, 0));
         i++;
     }
-    if(duplicate(stack) == 1 || is_sorted(stack) == 1)
+    if(duplicate(stack->a) == 1 || is_sorted(stack->a) == 1)
 		return(1);
-    // tmp = stack.a;
-    // printf("--------stack_before------------\n");
-    // while (tmp)
-    // {
-    //     printf("num = %d ---> pos : %d\n",tmp->data, tmp->position);
-    //     tmp = tmp->next;
-    // }
-    test(&stack, 0, 19);
+    tmp = stack->a;
+    printf("--------stack_before------------\n");
+    while (tmp)
+    {
+        printf("num = %d ---> pos : %d\n",tmp->data, tmp->position);
+        tmp = tmp->next;
+    }
+    //test(&stack, 0, 19);
     // tmp2 = stack.b;
     // printf("--------stack_B------------\n");
+    ft_sort_all_args(hubsize(stack->a), stack);
     // while (tmp2)
     // {
     //     printf("num = %d  ---> pos : %d\n",tmp2->data, tmp2->position);
     //     tmp2 = tmp2->next;
     // }
     // printf("--------stack_A------------\n");
-    // while (stack.a)
-    // {
-    //     printf("num = %d  ---> pos : %d\n",stack.a->data, stack.a->position);
-    //     stack.a = stack.a->next;
-    // }
+    while (stack->a)
+    {
+        printf("num = %d  ---> pos : %d\n",stack->a->data, stack->a->position);
+        stack->a = stack->a->next;
+    }
    
 }
 

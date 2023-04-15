@@ -12,7 +12,7 @@
 
 #include"push_swap.h"
 
-int closest_on_top(t_hub *a, int first, int final, size_t size)
+int check_pos_on_top(t_hub *a, int first, int final, size_t size)
 {
     t_hub *head;
     int   closest;
@@ -33,7 +33,7 @@ int closest_on_top(t_hub *a, int first, int final, size_t size)
     return (closest);
 }
 
-int closest_on_buttom(t_hub *a, int first, int final, size_t size)
+int check_pos_on_buttom(t_hub *a, int first, int final, size_t size)
 {
     t_hub *head;
     int   closest;
@@ -60,15 +60,15 @@ int closest_on_buttom(t_hub *a, int first, int final, size_t size)
     return (closest);
 }
 
-void     test(t_hub **st, int start, int finish)
-{
-    size_t size = hubsize((*st));
-    printf("*****\n");
-    printf("%d\n", closest_on_top((*st), start, finish, size));
-    printf("-----------**********************------------\n\n");
-    printf("%d\n", closest_on_buttom((*st), start, finish, size));
-    printf("*****\n");
-}
+// void     test(t_hub **st, int start, int finish)
+// {
+//     size_t size = hubsize((*st));
+//     printf("*****\n");
+//     printf("%d\n", closest_on_top((*st), start, finish, size));
+//     printf("-----------**********************------------\n\n");
+//     printf("%d\n", closest_on_buttom((*st), start, finish, size));
+//     printf("*****\n");
+// }
 
 //void    ft_push_chunks(t_data **st, int start, int finish)
 //{
