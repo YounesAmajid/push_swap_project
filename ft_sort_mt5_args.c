@@ -6,13 +6,16 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 15:24:47 by yamajid           #+#    #+#             */
-/*   Updated: 2023/04/07 16:28:56 by yamajid          ###   ########.fr       */
+/*   Updated: 2023/04/17 18:28:29 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-void    ft_sort_mt5_args(t_data *stack)
-{
-    int i;
-}
+// void    ft_sort_mt5_args(t_data *stack, size_t size, int finish)
+// {
+//     int i;
+
+//     i = 0;
+//     while ()
+// }

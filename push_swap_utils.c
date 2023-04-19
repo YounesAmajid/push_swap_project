@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 20:52:39 by yamajid           #+#    #+#             */
-/*   Updated: 2023/04/07 16:41:22 by yamajid          ###   ########.fr       */
+/*   Updated: 2023/04/19 20:59:12 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,24 +70,4 @@ int checks_error(char *str)
 		i++;
 	}	
 	return (1);
-}
-
-void	ft_sort_all_args(size_t size, t_data *stack)
-{
-
-	size = hubsize(stack->a);
-	if (stack->a == NULL)
-		return ;
-	if (size == 2)
-		swap_a(stack);
-	if (size == 3)
-		ft_sort_3_arg(stack);
-	if (size == 4)
-		ft_sort_4_args(stack);
-	if (size == 5)
-		ft_sort_5_args(stack);
-	// if (size > 5 && size < 200)
-	// {
-		
-	// }
 }

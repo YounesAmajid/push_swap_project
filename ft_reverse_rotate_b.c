@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 23:39:40 by yamajid           #+#    #+#             */
-/*   Updated: 2023/04/04 22:33:14 by yamajid          ###   ########.fr       */
+/*   Updated: 2023/04/19 21:16:14 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void ft_reverse_rotate_b(t_data *stack)
     t_hub   *tmp1;
     
     tmp = stack->b;
-    tmp = node_befoor_last(stack->b);
+    tmp = node_before_last(stack->b);
     tmp1 = ft_lstlast(stack->b);
     tmp->next = NULL;
     tmp1->next = stack->b;
