@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 23:39:17 by yamajid           #+#    #+#             */
-/*   Updated: 2023/04/19 21:16:05 by yamajid          ###   ########.fr       */
+/*   Updated: 2023/04/23 15:30:15 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_hub
 {
     int data;
     int position;
+    int index;
     struct s_hub *next;
 }   t_hub;
 
@@ -34,10 +35,13 @@ typedef struct s_data
 // int     ft_strncmp(char *dst, char *src, size_t n);
 int     check_pos_on_buttom(t_hub *stack, int first, int final, size_t size);
 int     check_pos_on_top(t_hub *stack, int first, int final, size_t size);
-void    ft_push_chunks(t_data *stack, int dv, size_t size);
+void    ft_get_chunks(t_data *stack, int dv, size_t  size);
 int     get_nlocation(t_hub *stack, size_t size, int pos);
+void    ft_push_back_to_a(t_data *stack);
+void    ft_push_chunk(t_data **a,int start, int stop);
 void	ft_sort_all_args(size_t size, t_data *stack);
 void	ft_lstaddback(t_hub **stack, t_hub *newnode);
+int    ft_check_nm_pos(t_hub  *stack, size_t  size, int pos);
 // void    test(t_hub **st, int start, int finish);
 void    ft_reverse_rotate_b(t_data *stack);
 void 	ft_reverse_rotate_a(t_data *stack);

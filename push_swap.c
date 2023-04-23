@@ -13,6 +13,30 @@
 
 #include "push_swap.h"
 
+void    add_index(t_hub *stack)
+{
+    int i;
+
+    i = -1;
+    while (stack != NULL)
+    {
+        stack->index = ++i;
+        stack = stack->next;
+    } 
+}
+
+// void     test(t_hub **st, int start, int finish)
+// {
+//     size_t size = hubsize((*st));
+//     printf("*****\n");
+//     printf("top--->%d\n", check_pos_on_top((*st), start, finish, size));
+//     printf("-----------**********************------------\n\n");
+//     printf("buttom--->%d\n", check_pos_on_buttom((*st), start, finish, size));
+//     printf("*****\n");
+// }
+
+
+
 int main (int argc, char **argv)
 {
     t_hub *tmp;
@@ -36,22 +60,16 @@ int main (int argc, char **argv)
     }
     if(duplicate(stack.a) == 1 || is_sorted(stack.a) == 1)
 		return(1);
+    add_index(stack.a);
+    // printf("%d\n", stack.a->position);
+    //ft_push_chunks(&stack, 5, 99);
     tmp = stack.a;
-    // printf("--------stack_before------------\n");
-    // while (tmp)
-    // {
-    //     printf("num = %d ---> pos : %d\n",tmp->data, tmp->position);
-    //     tmp = tmp->next;
-    // }
-    //test(&stack, 0, 19);
-    // printf("--------stack_B------------\n");
+    //printf("--------stack_before------------\n");
+    // test(&stack.a, 0, 19);
+    //printf("--------stack_A------------\n");
     ft_sort_all_args(hubsize(stack.a), &stack);
-    //test(&stack.a, 0, 10);
-    // while (tmp2)
-    // {
-    //     printf("num = %d  ---> pos : %d\n",tmp2->data, tmp2->position);
-    //     tmp2 = tmp2->next;
-    // }
+
+    //ft_check_nm_pos(stack.a , hubsize(stack.a));
     // printf("--------stack_A------------\n");
     // while (stack.a)
     // {
