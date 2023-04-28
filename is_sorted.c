@@ -6,24 +6,24 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:36:40 by yamajid           #+#    #+#             */
-/*   Updated: 2023/04/19 21:18:54 by yamajid          ###   ########.fr       */
+/*   Updated: 2023/04/24 22:23:18 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int    is_sorted(t_hub *stack)
+int	is_sorted(t_hub *stack)
 {
-    t_hub   *tmp;
+	t_hub *tmp;
 
-    tmp = stack;
-    int i = 0;
-    while(tmp)
-    {
-        if(tmp->position != i)
-            return(0);
-        i++;
-        tmp = tmp->next;
-    }
-    return(1);
+	tmp = stack;
+	int i = 0;
+	while (tmp)
+	{
+		if (tmp->position != i)
+			return (0);
+		i++;
+		tmp = tmp->next;
+	}
+	return (1);
 }

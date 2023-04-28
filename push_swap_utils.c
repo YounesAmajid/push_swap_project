@@ -6,30 +6,81 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 20:52:39 by yamajid           #+#    #+#             */
-/*   Updated: 2023/04/19 20:59:12 by yamajid          ###   ########.fr       */
+/*   Updated: 2023/04/28 22:03:59 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
-int	ft_strncmp(char *dst, char *src, size_t n)
-{
-	size_t			i;
+// int	ft_strncmp(char *dst, char *src, size_t n)
+// {
+// 	size_t			i;
 
-	if (n == 0)
-		return (0);
-	i = 0;
-	while ((dst[i] || src[i]) && i < n)
-	{
-		if (dst[i] != src[i])
-			return (dst[i] - src[i]);
-		i++;
-	}
-	return (0);
-}
+// 	if (n == 0)
+// 		return (0);
+// 	i = 0;
+// 	while ((dst[i] || src[i]) && i < n)
+// 	{
+// 		if (dst[i] != src[i])
+// 			return (dst[i] - src[i]);
+// 		i++;
+// 	}
+// 	return (0);
+// }
 
 int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
+}
+
+char	*ft_strjoin(char *s1, char *s2)
+{
+	char	*ptr;
+	size_t	len;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	return (NULL);
+	if (!s1 || !s2)
+	printf("here");
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	ptr = (char *)malloc(len * sizeof(char));
+	if (!ptr)
+		return (NULL);
+	while (s1[i])
+	{
+		ptr[i] = s1[i];
+		i++;
+	}
+	// ptr[i++] = " ";
+	while (s2[j])
+	{
+		ptr[i + j] = s2[j];
+		j++;
+	}
+	ptr[i + j] = '\0';
+	return (ptr);
+}
+
+size_t ft_strlen(const char *str)
+{
+	size_t	i;
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i])
+		i++;
+	return (i);
+}
+
+int	if_long(long res, int sign)
+{
+	if (res > 0 && sign < 0)
+		return (0);
+	else if (res < 0 && sign > 0)
+		return (-1);
+	return ((int )res);
 }
 
 int	ft_atoi(const char *str)

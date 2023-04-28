@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 20:51:18 by yamajid           #+#    #+#             */
-/*   Updated: 2023/04/03 14:43:51 by yamajid          ###   ########.fr       */
+/*   Updated: 2023/04/26 23:45:20 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	ft_lstaddback(t_hub **stack, t_hub *newnode)
 {
 	t_hub	*lastnode;
 	t_hub	*tmp;
-	
+
 	tmp = *stack;
 	newnode->position = 0;
 	if (!stack || !newnode)
-	 	return ;
+		return ;
 	while (tmp)
 	{
 		if (newnode->data > tmp->data)

@@ -13,77 +13,72 @@
 
 #include "push_swap.h"
 
-void    add_index(t_hub *stack)
+void	add_index(t_hub *stack)
 {
-    int i;
+	int	i;
 
-    i = -1;
-    while (stack != NULL)
-    {
-        stack->index = ++i;
-        stack = stack->next;
-    } 
+	i = -1;
+	while (stack != NULL)
+	{
+		stack->index = ++i;
+		stack = stack->next;
+	}
 }
 
-// void     test(t_hub **st, int start, int finish)
-// {
-//     size_t size = hubsize((*st));
-//     printf("*****\n");
-//     printf("top--->%d\n", check_pos_on_top((*st), start, finish, size));
-//     printf("-----------**********************------------\n\n");
-//     printf("buttom--->%d\n", check_pos_on_buttom((*st), start, finish, size));
-//     printf("*****\n");
-// }
-
-
-
-int main (int argc, char **argv)
+void	f(void)
 {
-    t_hub *tmp;
-    // t_hub *tmp2;
-	t_data stack;
-    int i;
-    int nbr;
-
-    stack.a = NULL;
-    stack.b = NULL;
-    if (argc <= 2)
-        return (1);
-    i = 1;
-    while (i < argc)
-    {
-        if (checks_error(argv[i]) == 0)
-            return (1);
-        nbr = ft_atoi(argv[i]);
-        ft_lstaddback(&stack.a, ft_lstnew(nbr, 0));
-        i++;
-    }
-    if(duplicate(stack.a) == 1 || is_sorted(stack.a) == 1)
-		return(1);
-    add_index(stack.a);
-    // printf("%d\n", stack.a->position);
-    //ft_push_chunks(&stack, 5, 99);
-    tmp = stack.a;
-    //printf("--------stack_before------------\n");
-    // test(&stack.a, 0, 19);
-    //printf("--------stack_A------------\n");
-    ft_sort_all_args(hubsize(stack.a), &stack);
-
-    //ft_check_nm_pos(stack.a , hubsize(stack.a));
-    // printf("--------stack_A------------\n");
-    // while (stack.a)
-    // {
-    //     printf("num_a = %d ----- pos= %d\n",stack.a->data, stack.a->position);
-    //     stack.a = stack.a->next;
-    // }
-    // printf("--------------stack_B---------------------------\n");
-    // tmp2 = stack.b;
-    // while (tmp2)
-    // {
-    //     printf("num = %d ---  pos=   %d\n",tmp2->data, tmp2->position);
-    //     tmp2 = tmp2->next;
-    // }
-   
+	system("leaks push_swap");
 }
 
+void	ft_lstdelone(t_hub *lst)
+{
+	if (!lst)
+		return ;
+	free(lst);
+}
 
+void	ft_lstclear(t_hub **lst)
+{
+	t_hub	*tmp;
+
+	if (!lst || !(*lst))
+		return ;
+	tmp = *lst;
+	while (*lst)
+	{
+		*lst = (*lst)->next;
+		ft_lstdelone(tmp);
+		tmp = *lst;
+	}
+}
+
+int	main(int argc, char **argv)
+{
+	t_data	stack;
+	int		i;
+	int		nbr;
+	char	*str;
+
+	// atexit(f);
+	stack.a = NULL;
+	stack.b = NULL;
+	if (argc <= 2)
+		return (1);
+	i = 1;
+	while (argv[i])
+	{
+		// str = ft_strjoin(str, argv[i]);
+		if (checks_error(argv[i]) == 0)
+			return (1);
+		nbr = ft_atoi(argv[i]);
+		ft_lstaddback(&stack.a, ft_lstnew(nbr, 0));
+		i++;
+	}
+	// printf("%s", str);
+	if (duplicate(stack.a) == 1 || is_sorted(stack.a) == 1)
+		return (1);
+	add_index(stack.a);
+	ft_sort_all_args(hubsize(stack.a), &stack);
+	ft_lstclear(&stack.a);
+	ft_lstclear(&stack.b);
+}
