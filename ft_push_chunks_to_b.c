@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 01:13:39 by yamajid           #+#    #+#             */
-/*   Updated: 2023/04/24 22:22:36 by yamajid          ###   ########.fr       */
+/*   Updated: 2023/05/02 15:36:28 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ void	ft_push_chunk(t_data **stack, int start, int stop)
 
 void	ft_get_chunks(t_data *stack, int dv, size_t size)
 {
-	int	start;
-	int	stop;
-	int	left;
-	int	i;
+	int		start;
+	int		stop;
+	int		left;
+	int		i;
 
 	(void)stack;
 	start = 0;

@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 23:39:32 by yamajid           #+#    #+#             */
-/*   Updated: 2023/04/24 22:23:56 by yamajid          ###   ########.fr       */
+/*   Updated: 2023/05/02 15:29:26 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_rotate_b(t_data *stack)
 {
-	t_hub *tmp;
-	t_hub *tmp1;
-	t_hub *tmp2;
+	t_hub	*tmp;
+	t_hub	*tmp1;
+	t_hub	*tmp2;
 
 	tmp = stack->b;
 	tmp1 = stack->b->next;

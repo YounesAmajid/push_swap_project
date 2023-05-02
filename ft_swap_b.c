@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 13:58:24 by yamajid           #+#    #+#             */
-/*   Updated: 2023/04/24 22:23:29 by yamajid          ###   ########.fr       */
+/*   Updated: 2023/05/02 15:34:44 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	swap_b(t_data *stack)
 {
-	int data;
-	int position;
+	int		data;
+	int		position;
 
 	data = stack->b->data;
 	position = stack->b->position;

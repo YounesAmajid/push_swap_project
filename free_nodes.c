@@ -1,28 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hubsize.c                                          :+:      :+:    :+:   */
+/*   free_nodes.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/04 21:12:27 by yamajid           #+#    #+#             */
-/*   Updated: 2023/04/24 22:23:22 by yamajid          ###   ########.fr       */
+/*   Created: 2023/05/01 16:07:35 by yamajid           #+#    #+#             */
+/*   Updated: 2023/05/02 15:36:50 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-size_t	hubsize(t_hub *stack)
+void	ft_lstdelone(t_hub *lst)
+{
+	if (!lst)
+		return ;
+	free(lst);
+}
+
+void	ft_lstclear(t_hub **lst)
 {
 	t_hub	*tmp;
-	int		i;
 
-	i = 0;
-	tmp = stack;
-	while (tmp)
+	if (!lst || !(*lst))
+		return ;
+	tmp = *lst;
+	while (*lst)
 	{
-		tmp = tmp->next;
-		i++;
+		*lst = (*lst)->next;
+		ft_lstdelone(tmp);
+		tmp = *lst;
 	}
-	return (i);
+}
+
+void	free_arr(char **arr)
+{
+	int	i;
+
+	i = -1;
+	while (arr[++i])
+		free(arr[i]);
+	free(arr);
 }

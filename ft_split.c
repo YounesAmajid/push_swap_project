@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 18:02:02 by yamajid           #+#    #+#             */
-/*   Updated: 2023/04/27 18:25:36 by yamajid          ###   ########.fr       */
+/*   Updated: 2023/05/02 15:35:21 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ static char	**free_go(char **ptr, size_t j)
 	j--;
 	while (j)
 	{
-		free (ptr[j]);
+		free(ptr[j]);
 		j--;
 	}
-	free (ptr);
+	free(ptr);
 	return (NULL);
 }
 

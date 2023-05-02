@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 15:35:57 by yamajid           #+#    #+#             */
-/*   Updated: 2023/04/24 22:27:15 by yamajid          ###   ########.fr       */
+/*   Updated: 2023/05/02 15:37:23 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,33 +32,11 @@ int	top_or_buttom(t_hub *stack, int position)
 		return (0);
 }
 
-// int *get_closest(t_hub *b, int first, int second, size_t size)
-// {
-//     int i;
-//     int result[4];
-
-//     i = 0;
-//     while (b != NULL)
-//     {
-//         if (b->position == first)
-//             result[0] = i;
-//         if (b->position == second)
-//             result[2] = i;
-//         i ++;
-//         b = b->next;
-//     }
-//     result[1] = size - result[0];
-//     result[3] = size - result[2];
-//     // printf("%d : %d : %d : %d\n", result[0], result[1], result[2],
-		//result[3]);
-//     return (NULL);
-// }
-
 void	ft_push_back_to_a(t_data *stack)
 {
-	int i;
-	size_t size;
-	size_t size2;
+	int		i;
+	size_t	size;
+	size_t	size2;
 
 	size = hubsize(stack->b);
 	i = size - 1;

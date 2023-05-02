@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,78 +6,67 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 20:52:20 by yamajid           #+#    #+#             */
-/*   Updated: 2023/03/24 22:02:30 by yamajid          ###   ########.fr       */
+/*   Updated: 2023/05/02 15:33:04 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	add_index(t_hub *stack)
+char	**get_join_split(char **av)
+{
+	int		i;
+	char	**ptr;
+	char	*str;
+
+	str = NULL;
+	i = -1;
+	while (av[++i])
+	{
+		if (ft_strncmp(av[i], "", 5) == 0 || all_spaces(av[i]))
+			return (free(str), NULL);
+		str = ft_strjoin(str, av[i]);
+	}
+	ptr = ft_split(str, ' ');
+	return (free(str), ptr);
+}
+
+int	ft_sort(t_data *stack, char **ptr)
 {
 	int	i;
 
-	i = -1;
-	while (stack != NULL)
-	{
-		stack->index = ++i;
-		stack = stack->next;
-	}
-}
-
-void	f(void)
-{
-	system("leaks push_swap");
-}
-
-void	ft_lstdelone(t_hub *lst)
-{
-	if (!lst)
-		return ;
-	free(lst);
-}
-
-void	ft_lstclear(t_hub **lst)
-{
-	t_hub	*tmp;
-
-	if (!lst || !(*lst))
-		return ;
-	tmp = *lst;
-	while (*lst)
-	{
-		*lst = (*lst)->next;
-		ft_lstdelone(tmp);
-		tmp = *lst;
-	}
+	i = 0;
+	while (ptr[++i])
+		ft_lstaddback(&stack->a, ft_lstnew(ft_atoi(ptr[i]), 0));
+	if (duplicate(stack->a) == 1)
+		return (write(1, "Error\n", 6), ft_lstclear(&stack->a),
+			ft_lstclear(&stack->a), free_arr(ptr), 1);
+	if (is_sorted(stack->a) == 1)
+		return (ft_lstclear(&stack->a), ft_lstclear(&stack->a), free_arr(ptr),
+			1);
+	return (1);
 }
 
 int	main(int argc, char **argv)
 {
 	t_data	stack;
 	int		i;
-	int		nbr;
-	char	*str;
+	char	**ptr;
 
-	// atexit(f);
 	stack.a = NULL;
 	stack.b = NULL;
-	if (argc <= 2)
-		return (1);
-	i = 1;
-	while (argv[i])
-	{
-		// str = ft_strjoin(str, argv[i]);
-		if (checks_error(argv[i]) == 0)
-			return (1);
-		nbr = ft_atoi(argv[i]);
-		ft_lstaddback(&stack.a, ft_lstnew(nbr, 0));
-		i++;
-	}
-	// printf("%s", str);
-	if (duplicate(stack.a) == 1 || is_sorted(stack.a) == 1)
-		return (1);
+	if (argc < 2)
+		return (write(1, "Error\n", 6), 1);
+	ptr = get_join_split(++argv);
+	if (!ptr)
+		return (write(1, "Error\n", 6), 1);
+	if (checks_error(ptr) == 0)
+		return (write(1, "Error\n", 6), free_arr(ptr), 1);
+	i = -1;
+	ft_sort(&stack, ptr);
 	add_index(stack.a);
 	ft_sort_all_args(hubsize(stack.a), &stack);
 	ft_lstclear(&stack.a);
 	ft_lstclear(&stack.b);
+	free_arr(ptr);
+	return (0);
 }

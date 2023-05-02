@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 14:32:16 by yamajid           #+#    #+#             */
-/*   Updated: 2023/04/24 22:23:43 by yamajid          ###   ########.fr       */
+/*   Updated: 2023/05/02 15:35:45 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_sort_4_args(t_data *stack)
 {
-	int loc;
+	int	loc;
 
 	loc = get_nlocation(stack->a, hubsize(stack->a), 0);
 	while (1)

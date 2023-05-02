@@ -6,7 +6,7 @@
 /*   By: yamajid <yamajid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:36:40 by yamajid           #+#    #+#             */
-/*   Updated: 2023/04/24 22:23:18 by yamajid          ###   ########.fr       */
+/*   Updated: 2023/05/02 15:34:19 by yamajid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 int	is_sorted(t_hub *stack)
 {
-	t_hub *tmp;
+	t_hub	*tmp;
+	int		i;
 
 	tmp = stack;
-	int i = 0;
+	i = 0;
 	while (tmp)
 	{
 		if (tmp->position != i)
