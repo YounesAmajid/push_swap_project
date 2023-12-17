@@ -1,0 +1,4 @@
+- Sorting integers using two stacks.
+- Minimizing the number of operations.
+- Detailed algorithm overview.
+- Various options for customization.
